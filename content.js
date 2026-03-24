@@ -119,23 +119,26 @@ async function resumeSupportedSitePlayback() {
   const host = window.location.hostname;
   let handled = await resumeKnownMediaElements();
 
-  if (host.includes("youtube.com") || host === "youtu.be") {
-    handled = clickPlayButton([
-      ".ytp-play-button",
-      "button[title*='Play']",
-      "button[aria-label*='Play']"
-    ]) || handled;
-  } else if (host.includes("bilibili.com")) {
-    handled = clickPlayButton([
-      ".bpx-player-ctrl-play",
-      ".bilibili-player-video-btn-start",
-      ".bpx-player-state-wrap"
-    ]) || handled;
-  } else if (host.includes("douyin.com")) {
-    handled = clickPlayButton([
-      "[data-e2e='video-play-pause']",
-      ".xgplayer-play"
-    ]) || handled;
+  // Only click the site play button as a fallback when direct media.play() did not work.
+  if (!handled) {
+    if (host.includes("youtube.com") || host === "youtu.be") {
+      handled = clickPlayButton([
+        ".ytp-play-button",
+        "button[title*='Play']",
+        "button[aria-label*='Play']"
+      ]);
+    } else if (host.includes("bilibili.com")) {
+      handled = clickPlayButton([
+        ".bpx-player-ctrl-play",
+        ".bilibili-player-video-btn-start",
+        ".bpx-player-state-wrap"
+      ]);
+    } else if (host.includes("douyin.com")) {
+      handled = clickPlayButton([
+        "[data-e2e='video-play-pause']",
+        ".xgplayer-play"
+      ]);
+    }
   }
 
   if (handled) {
