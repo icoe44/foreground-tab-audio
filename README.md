@@ -1,8 +1,14 @@
-# Foreground Tab Audio Only
+# foreground-tab-audio
 
-This Chrome extension keeps audio on the active tab by default.
-You can also set a page to always play audio or always stay muted.
-Supported sites can also pause automatically in the background and resume when you return.
+A Chrome extension that keeps audio on the active tab only, with per-page sound rules and auto pause/resume for supported sites.
+
+## Features
+
+- Keep audio on the active tab by default
+- Set the current page to `Default`, `Always on`, or `Always muted`
+- Automatically pause supported sites in the background
+- Automatically resume playback when you return to a tab paused by the extension
+- Supported sites: Bilibili, Douyin, YouTube
 
 ## Install
 
@@ -15,15 +21,13 @@ Supported sites can also pause automatically in the background and resume when y
 F:\定制水下单平台\chrome-tab-mute
 ```
 
-## Use
+## How It Works
 
-- Open two or more live-stream tabs
 - The active foreground tab keeps audio
-- When you switch tabs, the newly active tab gets audio automatically
-- Click the extension icon to open a small control panel
+- Background tabs are muted automatically
+- Click the extension icon to open the control panel
 - For the current page, choose one of these rules:
 - `Default`: follow foreground mode
 - `Always on`: this page always has audio
 - `Always muted`: this page is always muted
 - Use the playback toggle to pause background playback and resume on return
-- Supported sites: Bilibili, Douyin, YouTube
