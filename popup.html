@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Audio Rules</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="panel">
+      <h1>&#58;&#39029;&#38754;&#22768;&#38899;&#35268;&#21017;</h1>
+      <p class="hint" id="page-url">&#26410;&#35835;&#21462;&#24403;&#21069;&#39029;&#38754;</p>
+      <button class="policy-button" data-policy="auto">
+        &#40664;&#35748;&#27169;&#24335;
+      </button>
+      <button class="policy-button" data-policy="always_on">
+        &#27492;&#32593;&#39029;&#22987;&#32456;&#26377;&#22768;&#38899;
+      </button>
+      <button class="policy-button" data-policy="always_muted">
+        &#27492;&#32593;&#39029;&#22987;&#32456;&#38745;&#38899;
+      </button>
+      <label class="toggle-row">
+        <input id="auto-pause-toggle" type="checkbox">
+        <span>&#25903;&#25345;&#31449;&#28857;&#21518;&#21488;&#26242;&#20572;&#65292;&#21069;&#21488;&#33258;&#21160;&#25773;&#25918;</span>
+      </label>
+      <p class="status" id="status-text"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Foreground Tab Audio Only",
+  "description": "Only the active tab keeps audio. Background tabs are muted automatically.",
+  "version": "1.0.0",
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.bilibili.com/*",
+    "*://*.douyin.com/*",
+    "*://*.youtube.com/*",
+    "*://youtu.be/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Foreground tab audio only",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.bilibili.com/*",
+        "*://*.douyin.com/*",
+        "*://*.youtube.com/*",
+        "*://youtu.be/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
